@@ -1,0 +1,97 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FaceInsight - Attribute Detector</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+      color: #fff;
+      font-family: 'Cinzel Decorative', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+      position: relative;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(2px);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+    }
+
+    .container {
+      z-index: 1;
+      text-align: center;
+      padding: 40px;
+      border-radius: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #50fa7b;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #50fa7b;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 40px;
+      color: #ccc;
+    }
+
+    .btn {
+      background: #50fa7b;
+      border: none;
+      padding: 15px 30px;
+      margin: 10px;
+      border-radius: 10px;
+      color: #000;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #50fa7b;
+    }
+
+    .btn:hover {
+      background: #36e173;
+      box-shadow: 0 0 20px #36e173, 0 0 30px #36e173;
+    }
+
+    .footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <div class="container">
+    <h1>FaceInsight</h1>
+    <p>Upload a face image to detect:<br>
+      <strong>Gender</strong>, <strong>Glasses</strong>, <strong>Shirt Color</strong></p>
+
+    <a href="{% url "up_image" %}"><button class="btn">Start Detection</button></a>
+
+    <div class="footer">© 2025 FaceInsight — Facial Attribute Detection</div>
+  </div>
+
+</body>
+</html>
